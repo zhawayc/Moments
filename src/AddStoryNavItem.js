@@ -5,7 +5,6 @@ import { withRouter } from 'react-router';
 class AddStoryNavItem extends React.Component {
 
     onClickCreateStory() {
-        console.log(this.props);
         this.props.history.push("/createStory");
     }
     

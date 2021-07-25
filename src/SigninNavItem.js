@@ -33,18 +33,18 @@ export default class SigninNavItem extends React.Component {
                     <Modal.Body>
                         <Form>
                             <FormGroup>
-                                <ControlLabel>username</ControlLabel>
+                                <ControlLabel>Username</ControlLabel>
                                 <FormControl name="username" autoFocus />
                             </FormGroup>
                             <FormGroup>
-                                <ControlLabel>password</ControlLabel>
+                                <ControlLabel>Password</ControlLabel>
                                 <FormControl name="password"></FormControl>
                             </FormGroup>
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
                         <ButtonToolbar>
-                            <Button type="button" bsStyle="primary" onClick={()=>{this.handleSubmit()}}>Sign In</Button>
+                            <Button type="button" bsStyle="primary" onClick={(e)=>{this.handleSubmit(e)}}>Sign In</Button>
                             <Button bsStyle="link" onClick={()=>{this.hideModal()}}>Cancel</Button>
                         </ButtonToolbar>
                     </Modal.Footer>
