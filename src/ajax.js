@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 export default async function ajax(endpoint, payload) {
     const headers = {'Content-Type': "application/json"};
-    const response = await fetch(`https://moments-backend-yanchen.herokuapp.com${endpoint}`, {
+    const response = await fetch(endpoint, {
         method: 'POST',
         headers,
         body: JSON.stringify(payload)
