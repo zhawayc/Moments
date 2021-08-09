@@ -10,7 +10,7 @@ class AddStoryNavItem extends React.Component {
     
     render() {
         return (
-            <NavItem onClick={()=>{this.onClickCreateStory()}}>
+            <NavItem disabled={!this.props.login} onClick={()=>{this.onClickCreateStory()}}>
                 <Glyphicon glyph="plus" />
             </NavItem>
         );

@@ -1,10 +1,14 @@
 import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
 import AddStoryNavItem from './AddStoryNavItem';
 import SigninNavItem from './SigninNavItem';
 
-export default function NavBar() {
+function NavBar(props) {
+
+    const {login, username} = props.userLogin;
+    const userAuthentication = login ? <NavItem>{`Welcome ${username}!`}</NavItem> : <SigninNavItem />;
 
     return(
         <Navbar>
@@ -20,9 +24,15 @@ export default function NavBar() {
                 </LinkContainer>
             </Nav>
             <Nav pullRight>
-                <AddStoryNavItem />
-                <SigninNavItem />
+                <AddStoryNavItem login={login} />
+                {userAuthentication}
             </Nav>
         </Navbar>
     );
 }
+
+const mapStateToProps = state => ({
+    userLogin: state.userLogin
+});
+
+export default connect(mapStateToProps)(NavBar);
